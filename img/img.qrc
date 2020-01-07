@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>curreng_load.jpg</file>
+        <file>delete.jpg</file>
+        <file>delete_but.jpg</file>
+        <file>file_load.jpg</file>
+        <file>img.qrc</file>
+        <file>load.jpg</file>
+        <file>new_load.jpg</file>
+        <file>QQ截图20200101213834.jpg</file>
+        <file>search.jpg</file>
+        <file>stop.jpg</file>
+        <file>up.jpg</file>
+        <file>user.jpg</file>
+        <file>user_img.jpg</file>
+        <file>load_but.jpg</file>
+    </qresource>
+</RCC>

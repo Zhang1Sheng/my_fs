@@ -1,0 +1,17 @@
+INPUT(
+./release\main.o
+./release\dialoglogin.o
+./release\dialog_new.o
+./release\upload.o
+./release\dialog_download.o
+./release\dialog_userinfo_update.o
+./release\mainwindow.o
+./release\qrc_resource.o
+./release\qrc_img.o
+./release\moc_dialoglogin.o
+./release\moc_dialog_new.o
+./release\moc_upload.o
+./release\moc_dialog_download.o
+./release\moc_dialog_userinfo_update.o
+./release\moc_mainwindow.o
+);

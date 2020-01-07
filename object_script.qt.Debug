@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\dialoglogin.o
+./debug\dialog_new.o
+./debug\upload.o
+./debug\dialog_download.o
+./debug\dialog_userinfo_update.o
+./debug\mainwindow.o
+./debug\qrc_resource.o
+./debug\qrc_img.o
+./debug\moc_dialoglogin.o
+./debug\moc_dialog_new.o
+./debug\moc_upload.o
+./debug\moc_dialog_download.o
+./debug\moc_dialog_userinfo_update.o
+./debug\moc_mainwindow.o
+);

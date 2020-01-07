@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>user_head.png</file>
+        <file>user.png</file>
+        <file>password.png</file>
+        <file>../../../../git-work/test/img/curreng_load.jpg</file>
+        <file>../../../../git-work/test/img/delete.jpg</file>
+        <file>../../../../git-work/test/img/delete_but.jpg</file>
+        <file>../../../../git-work/test/img/file_load.jpg</file>
+        <file>../../../../git-work/test/img/load.jpg</file>
+        <file>../../../../git-work/test/img/load_but.jpg</file>
+        <file>../../../../git-work/test/img/new_load.jpg</file>
+        <file>../../../../git-work/test/img/QQ截图20200101213834.jpg</file>
+        <file>../../../../git-work/test/img/search.jpg</file>
+        <file>../../../../git-work/test/img/stop.jpg</file>
+        <file>../../../../git-work/test/img/up.jpg</file>
+        <file>../../../../git-work/test/img/user.jpg</file>
+        <file>../../../../git-work/test/img/user_img.jpg</file>
+    </qresource>
+</RCC>

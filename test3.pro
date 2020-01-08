@@ -18,17 +18,18 @@ SOURCES += main.cpp\
     dialog_userinfo_update.cpp \
     dialoglogin.cpp \
     dialog_new.cpp \
-    upload.cpp
+    upload.cpp \
+    download.cpp
 
-  
 
 HEADERS  += mainwindow.h \
     dialog_download.h \
     dialog_userinfo_update.h \
     dialoglogin.h \
     dialog_new.h \
-    upload.h
-
+    upload.h \
+    download.h \
+    download.h
 
 FORMS    += mainwindow.ui \
     dialog_download.ui \
@@ -39,3 +40,4 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     img/img.qrc
+LIBS += "D:\QT\5.5\mingw492_32\bin\Qt5Ftp.dll"

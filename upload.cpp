@@ -30,9 +30,8 @@ void upload::on_bt_upload_path_clicked()
 
 void upload::on_bt_upload_confirm_clicked()
 {
-    QString path = "ftp://192.168.1.100/";
+    QString path = "ftp://192.168.153.1/";
     int portNumber = 21;
-
     qDebug() << "确认上传！";
     QString filepath = ui->text_upload_path->toPlainText();
     qDebug() << filepath;
@@ -46,12 +45,10 @@ void upload::on_bt_upload_confirm_clicked()
     QFileInfo info = QFileInfo(filepath);
     QString filename = info.fileName();
     qDebug() << "文件名字为：" << filename;
-
     QUrl url(path + filename);
     url.setPort(portNumber);
     QNetworkRequest request(url);
     reply = accessManager->put(request, byte_file);
-
     connect(accessManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
     connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),this,SLOT(loadError(QNetworkReply::NetworkError)));
 }
@@ -64,6 +61,7 @@ void upload::replyFinished(QNetworkReply*)    //删除指针，更新和关闭�
             reply->deleteLater();
             fp->flush();
             fp->close();
+            QMessageBox::information(NULL, tr("提示"), tr("上传成功"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
         }
         else
         {

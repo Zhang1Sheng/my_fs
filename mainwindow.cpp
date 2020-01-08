@@ -7,6 +7,7 @@
 #include "dialoglogin.h"
 #include "dialog_new.h"
 #include "upload.h"
+#include "download.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -14,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     w=new Dialog_download();
     user=new Dialog_UserInfo_update();
-    new_work=new Dialog_new();
     login=new DialogLogin();
     file_up=new upload();
 }
@@ -26,7 +26,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_load_button_clicked()
 {
-
+    Download dw;
+    dw.download_file();
 }
 
 void MainWindow::on_user_info_clicked()
@@ -36,6 +37,7 @@ void MainWindow::on_user_info_clicked()
 
 void MainWindow::on_new_work_button_clicked()
 {
+      new_work=new Dialog_new();
       new_work->show();
 }
 

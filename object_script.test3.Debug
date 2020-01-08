@@ -6,6 +6,7 @@ INPUT(
 ./debug\dialoglogin.o
 ./debug\dialog_new.o
 ./debug\upload.o
+./debug\download.o
 ./debug\qrc_img.o
 ./debug\moc_mainwindow.o
 ./debug\moc_dialog_download.o
@@ -13,4 +14,5 @@ INPUT(
 ./debug\moc_dialoglogin.o
 ./debug\moc_dialog_new.o
 ./debug\moc_upload.o
+./debug\moc_download.o
 );

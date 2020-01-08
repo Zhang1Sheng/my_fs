@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Dialog_new_t {
-    QByteArrayData data[4];
-    char stringdata0[52];
+    QByteArrayData data[9];
+    char stringdata0[116];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,18 @@ static const qt_meta_stringdata_Dialog_new_t qt_meta_stringdata_Dialog_new = {
 QT_MOC_LITERAL(0, 0, 10), // "Dialog_new"
 QT_MOC_LITERAL(1, 11, 18), // "on_bt_path_clicked"
 QT_MOC_LITERAL(2, 30, 0), // ""
-QT_MOC_LITERAL(3, 31, 20) // "on_bt_concel_clicked"
+QT_MOC_LITERAL(3, 31, 20), // "on_bt_concel_clicked"
+QT_MOC_LITERAL(4, 52, 17), // "ftpCommandStarted"
+QT_MOC_LITERAL(5, 70, 18), // "ftpCommandFinished"
+QT_MOC_LITERAL(6, 89, 9), // "addToList"
+QT_MOC_LITERAL(7, 99, 8), // "QUrlInfo"
+QT_MOC_LITERAL(8, 108, 7) // "urlInfo"
 
     },
     "Dialog_new\0on_bt_path_clicked\0\0"
-    "on_bt_concel_clicked"
+    "on_bt_concel_clicked\0ftpCommandStarted\0"
+    "ftpCommandFinished\0addToList\0QUrlInfo\0"
+    "urlInfo"
 };
 #undef QT_MOC_LITERAL
 
@@ -46,7 +53,7 @@ static const uint qt_meta_data_Dialog_new[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,12 +61,18 @@ static const uint qt_meta_data_Dialog_new[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    0,   39,    2, 0x08 /* Private */,
+       3,    0,   40,    2, 0x08 /* Private */,
+       4,    1,   41,    2, 0x08 /* Private */,
+       5,    2,   44,    2, 0x08 /* Private */,
+       6,    1,   49,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    2,    2,
+    QMetaType::Void, 0x80000000 | 7,    8,
 
        0        // eod
 };
@@ -72,10 +85,12 @@ void Dialog_new::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_bt_path_clicked(); break;
         case 1: _t->on_bt_concel_clicked(); break;
+        case 2: _t->ftpCommandStarted((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->ftpCommandFinished((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 4: _t->addToList((*reinterpret_cast< const QUrlInfo(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject Dialog_new::staticMetaObject = {
@@ -103,13 +118,13 @@ int Dialog_new::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }

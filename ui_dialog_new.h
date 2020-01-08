@@ -15,9 +15,10 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTreeWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,9 +28,10 @@ public:
     QPushButton *bt_confirm;
     QPushButton *bt_concel;
     QPushButton *bt_selectfile;
-    QTableWidget *tableWidget;
     QPushButton *bt_path;
     QTextEdit *text_path;
+    QLabel *label;
+    QTreeWidget *fileList;
 
     void setupUi(QDialog *Dialog_new)
     {
@@ -44,35 +46,22 @@ public:
         bt_concel->setGeometry(QRect(420, 380, 101, 41));
         bt_selectfile = new QPushButton(Dialog_new);
         bt_selectfile->setObjectName(QStringLiteral("bt_selectfile"));
-        bt_selectfile->setGeometry(QRect(80, 120, 93, 28));
-        tableWidget = new QTableWidget(Dialog_new);
-        if (tableWidget->columnCount() < 3)
-            tableWidget->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        if (tableWidget->rowCount() < 4)
-            tableWidget->setRowCount(4);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(1, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem6);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(210, 40, 391, 192));
-        tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        bt_selectfile->setGeometry(QRect(30, 120, 93, 28));
         bt_path = new QPushButton(Dialog_new);
         bt_path->setObjectName(QStringLiteral("bt_path"));
         bt_path->setGeometry(QRect(80, 310, 93, 28));
         text_path = new QTextEdit(Dialog_new);
         text_path->setObjectName(QStringLiteral("text_path"));
-        text_path->setGeometry(QRect(210, 300, 391, 41));
+        text_path->setGeometry(QRect(210, 310, 391, 31));
+        label = new QLabel(Dialog_new);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(190, 245, 411, 31));
+        fileList = new QTreeWidget(Dialog_new);
+        fileList->setObjectName(QStringLiteral("fileList"));
+        fileList->setGeometry(QRect(160, 30, 481, 221));
+        fileList->setMinimumSize(QSize(481, 0));
+        fileList->setMaximumSize(QSize(481, 16777215));
+        fileList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
         retranslateUi(Dialog_new);
 
@@ -85,21 +74,12 @@ public:
         bt_confirm->setText(QApplication::translate("Dialog_new", "\347\241\256\350\256\244", 0));
         bt_concel->setText(QApplication::translate("Dialog_new", "\345\217\226\346\266\210", 0));
         bt_selectfile->setText(QApplication::translate("Dialog_new", "\351\200\211\346\213\251\346\226\207\344\273\266", 0));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Dialog_new", "\346\226\207\344\273\266\347\274\226\345\217\267", 0));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Dialog_new", "\346\226\260\345\273\272\345\210\227", 0));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Dialog_new", "\346\226\207\344\273\266\345\244\247\345\260\217", 0));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->verticalHeaderItem(0);
-        ___qtablewidgetitem3->setText(QApplication::translate("Dialog_new", "1", 0));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->verticalHeaderItem(1);
-        ___qtablewidgetitem4->setText(QApplication::translate("Dialog_new", "2", 0));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->verticalHeaderItem(2);
-        ___qtablewidgetitem5->setText(QApplication::translate("Dialog_new", "3", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->verticalHeaderItem(3);
-        ___qtablewidgetitem6->setText(QApplication::translate("Dialog_new", "4", 0));
         bt_path->setText(QApplication::translate("Dialog_new", "\350\256\276\347\275\256\350\267\257\345\276\204", 0));
+        label->setText(QString());
+        QTreeWidgetItem *___qtreewidgetitem = fileList->headerItem();
+        ___qtreewidgetitem->setText(2, QApplication::translate("Dialog_new", "\344\277\256\346\224\271\346\227\245\346\234\237", 0));
+        ___qtreewidgetitem->setText(1, QApplication::translate("Dialog_new", "\345\244\247\345\260\217", 0));
+        ___qtreewidgetitem->setText(0, QApplication::translate("Dialog_new", "\346\226\207\344\273\266", 0));
     } // retranslateUi
 
 };

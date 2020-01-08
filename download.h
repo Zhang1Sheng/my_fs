@@ -1,6 +1,7 @@
-#ifndef UPLOAD_H
-#define UPLOAD_H
-#include <QDialog>
+#ifndef DOWNLOAD_H
+#define DOWNLOAD_H
+
+#include <QObject>
 #include <QFile>
 #include <QString>
 #include <QNetworkAccessManager>
@@ -9,33 +10,23 @@
 #include <QUrl>
 #include <QDebug>
 #include <QMessageBox>
-#include <QProgressBar>
-#include <QFileInfo>
-
-namespace Ui {
-class upload;
-}
-
-class upload : public QDialog
+class Download : public QObject
 {
     Q_OBJECT
-
 public:
-    explicit upload(QWidget *parent = 0);
-    ~upload();
+    explicit Download(QObject *parent = 0);
+    void download_file();
 
-private slots:
-    void on_bt_upload_cancel_clicked();
+signals:
 
-    void on_bt_upload_path_clicked();
-
-    void on_bt_upload_confirm_clicked();
+public slots:
+    void readContent();
     void replyFinished(QNetworkReply*);
     void loadError(QNetworkReply::NetworkError);
 
 private:
-    Ui::upload *ui;
     QFile *fp; //需要上传的文件的指针
     QNetworkReply *reply;//ftp返回的上传结果
 };
-#endif // UPLOAD_H
+
+#endif // DOWNLOAD_H
